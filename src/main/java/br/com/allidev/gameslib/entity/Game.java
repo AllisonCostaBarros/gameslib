@@ -1,4 +1,4 @@
-package br.com.allidev.gameslib.entities;
+package br.com.allidev.gameslib.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -21,6 +21,8 @@ public class Game {
     private String platforms;
     private double score;
     private String imgUrl;
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
 }
