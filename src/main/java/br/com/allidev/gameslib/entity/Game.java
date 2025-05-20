@@ -16,7 +16,7 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    private int yearRelease;
+    private Integer yearRelease;
     private String genre;
     private String platforms;
     private double score;
