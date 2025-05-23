@@ -20,13 +20,13 @@ public class GameService {
     @Transactional(readOnly = true)
     public List<GameMinDTO> findAll() {
         List<Game> result = gameRepository.findAll();
-        return result.stream().map(x -> new GameMinDTO(x)).toList();
+        return result.stream().map(GameMinDTO::new).toList();
     }
 
     @Transactional(readOnly = true)
     public List<GameMinDTO> findByList(Long listId) {
         List<GameMinProjection> result = gameRepository.searchByList(listId);
-        return result.stream().map(x -> new GameMinDTO(x)).toList();
+        return result.stream().map(GameMinDTO::new).toList();
     }
 
     @Transactional(readOnly = true)
@@ -34,4 +34,5 @@ public class GameService {
         Game result = gameRepository.findById(id).get();
         return new GameDTO(result);
     }
+
 }
